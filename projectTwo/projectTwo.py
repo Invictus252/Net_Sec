@@ -12,22 +12,32 @@ tjfndng ongf ftz aqencm oftx gft nxynrtxg fqpptxtr lft lqnr gft oseqx oql wtlguz
 lsetgfnxw fqpptxtr gft cnsx osucrit dttx pug rsox hqwqzn lqnr ngl qoauc qxr ltcanlf sa lsetdsrm gs rs gfnl nl gft cqgtlg xtol sa gfnl lgszm'''
 
 encryptedMSGlist = encryptedMSG.split()
+#===================================================================================
 # Frequency Notes
-# ==================================================================================
+#===================================================================================
 # singleLetterFreq = {'E': 12.70, 'T': 9.06, 'A': 8.17, 'O': 7.51, 'I': 6.97, 'N': 6.75, 'S': 6.33, 'H': 6.09, 'R': 5.99, 'D': 4.25, 'L': 4.03, 'C': 2.78, 'U': 2.76, 'M': 2.41, 'W': 2.36, 'F': 2.23
 # ,'G': 2.02, 'Y': 1.97, 'P': 1.93, 'B': 1.29, 'V': 0.98, 'K': 0.77, 'J': 0.15, 'X': 0.15, 'Q': 0.10, 'Z': 0.07}
 #
 # trigramLetterFreq = {'THE': 1.81, 'AND': 0.73,'ING': 0.72,'ENT': 0.42,'ION': 0.42,'HER': 0.36,'FOR': 0.34,'THA': 0.33,'NTH': 0.33,'INT': 0.32,
 # 'ERE': 0.31,'TIO': 0.31,'TER': 0.30,'EST': 0.28,'ERS': 0.28,'ATI': 0.26,'HAT': 0.26,'ATE': 0.25,'ALL': 0.25,'ETH': 0.24,'HES': 0.24,'VER': 0.24,
 # 'HES': 0.24,'VER': 0.24,'HIS': 0.24,'OFT': 0.22,'ITH': 0.21,'FTH': 0.21,'STH': 0.21,'OTH': 0.21, 'RES': 0.21,'ONT': 0.20}
+#===================================================================================
+# Called Functions Overview
 #====================================================================================
+# collections_extended is a Python module providing a bag class, AKA multiset,
+#  a setlist class, which is a unique list or ordered set,
+#  a bijection class,
+#  RangeMap which is a mapping from ranges to values
+#  and a IndexedDict class, which is an ordered mapping whose elements can be accessed using index,
+#  in addition to key. There are also frozen (hashable) varieties of bags and setlists.
+
  # numpy.unique(ar, return_index=False, return_inverse=False, return_counts=False, axis=None)[source]
  #    Find the unique elements of an array.
  #    Returns the sorted unique elements of an array. There are three optional outputs in addition to the unique elements:
  #        the indices of the input array that give the unique values
  #        the indices of the unique array that reconstruct the input array
  #        the number of times each unique value comes up in the input array
-
+#===================================================================================
 
 # Break into parts
 def getNGrams(message, n):
@@ -50,5 +60,5 @@ cleanedResults = {}
 for k,v in sortedResults:
     cleanedResults.setdefault(len(k), []).append({'Group':k,'Freq':v})
 pprint.pprint(cleanedResults)
-# After much much much!!! trial and error 
+# After much much much!!! trial and error
 os.system('cat encryptedMSG | tr "qdyrtawfnvbcexspkzlguiojmh" "a-z"')
